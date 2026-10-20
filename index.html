@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cyber">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ARise Linux — Arch, rebuilt for builders</title>
+<meta name="description" content="ARise Linux is an Arch-based distro with Hyprland and KDE Plasma, prayer times in the bar, one-command theming and a ready dev stack.">
+<link rel="icon" href="assets/arise-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="progress" id="progress"></div>
+
+<header class="nav" id="nav">
+  <a href="#top" class="brand"><img src="assets/arise-logo.png" alt="" onerror="this.style.display='none'"><span>ARise Linux</span></a>
+  <nav>
+    <a href="#features">Features</a><a href="#desktops">Desktops</a><a href="#themes">Themes</a><a href="#tools">Tools</a><a href="#keys">Shortcuts</a><a href="#requirements">Requirements</a>
+  </nav>
+  <a href="#download" class="btn btn-sm magnetic">Download</a>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="desktop-preview">
+    <div class="waybar-preview" aria-label="Waybar desktop status bar preview">
+      <div class="waybar-group waybar-system">
+        <span class="waybar-chip">AM <b>06:37</b></span>
+        <span class="waybar-chip">70% <b>◖))</b></span>
+        <span class="waybar-chip">GB <b>2.4 ▰</b></span>
+        <span class="waybar-chip">12% <b>▦</b></span>
+        <span class="waybar-chip">MB/s <b>14.8 ◉</b></span>
+      </div>
+      <span class="waybar-chip prayer-chip"><b>PM 03:22</b> 🕌 Asr</span>
+      <div class="waybar-group waybar-workspace">
+        <span class="waybar-chip active-app">visual-studio-code <b>&lt;/&gt;</b></span>
+        <span class="waybar-chip workspaces" aria-label="Workspaces 1 to 5"><span>5</span><span>4</span><span>3</span><span>2</span><b>1</b></span>
+        <span class="waybar-chip arise-chip">ARise <b>ϟ</b></span>
+      </div>
+    </div>
+    <div class="terminal-actions" aria-label="Terminal commands">
+      <button type="button" data-terminal-command="clear">clear <span aria-hidden="true">🧹</span></button>
+      <button type="button" data-terminal-command="arise-setup">▣ arise-setup</button>
+      <button type="button" data-terminal-command="arise-update">▣ arise-update</button>
+      <button type="button" data-terminal-command="prayer-times">▣ prayer-times</button>
+      <button type="button" data-terminal-command="fastfetch">fastfetch <span aria-hidden="true">⚡</span></button>
+    </div>
+    <div class="term hero-term" id="heroTerm" aria-label="ARise Linux terminal preview">
+      <div class="term-bar"><b></b><b></b><b></b><span>youssef@arise-linux</span></div>
+      <pre id="heroTermBody"></pre>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div>
+  <span>Hyprland</span><span>KDE Plasma 6</span><span>Waybar</span><span>Kitty</span><span>Rofi</span><span>pywal</span><span>SDDM</span><span>Brave</span><span>VS Code</span><span>Docker</span><span>Obsidian</span><span>Yazi</span>
+  <span>Hyprland</span><span>KDE Plasma 6</span><span>Waybar</span><span>Kitty</span><span>Rofi</span><span>pywal</span><span>SDDM</span><span>Brave</span><span>VS Code</span><span>Docker</span><span>Obsidian</span><span>Yazi</span>
+</div></div>
+
+<section class="stats">
+  <div><b data-count="4">0</b><span>one-command themes</span></div>
+  <div><b data-count="2">0</b><span>desktop environments</span></div>
+  <div><b data-count="30" data-plus>0</b><span>preinstalled tools</span></div>
+  <div><b data-count="5">0</b><span>prayer times, always visible</span></div>
+</section>
+
+<section id="features" class="sec">
+  <h2 class="reveal">Everything is already set up.</h2>
+  <p class="sub reveal">No weekend of dotfile hunting. A fresh install looks and works like a daily driver.</p>
+  <div class="grid">
+    <article class="card spot reveal"><h3>Floating glass bar</h3><p>Waybar built as separate glass capsules: workspaces, window title, network speed, CPU, RAM, volume, clock and tray.</p></article>
+    <article class="card spot reveal wide"><h3>Prayer times in the bar</h3><p>A built-in script computes the next prayer for Cairo time. Hover to see all five times in a tooltip. Built for Arabic-speaking users, not bolted on.</p></article>
+    <article class="card spot reveal"><h3>Arabic + English, instantly</h3><p>Switch layouts with Alt + Shift. RTL text renders correctly across the desktop.</p></article>
+    <article class="card spot reveal"><h3>Wallpaper drives the colors</h3><p>Change the wallpaper and pywal repaints Waybar and Kitty automatically.</p></article>
+    <article class="card spot reveal"><h3>Dev stack included</h3><p>VS Code, Node, PNPM, Bun, Rust, Go, Docker, lazygit, ripgrep, fzf, zoxide and Starship are ready on first boot.</p></article>
+    <article class="card spot reveal"><h3>Smooth even in a VM</h3><p>Hyprland is tuned for VirtualBox, with no broken cursor and no flicker.</p></article>
+    <article class="card spot reveal wide"><h3>Lock screen and login to match</h3><p>Hyprlock with glass blur, and an SDDM login with four themes you can switch from the terminal.</p></article>
+  </div>
+</section>
+
+<section id="desktops" class="sec split2">
+  <div class="reveal">
+    <h2>Two desktops. Pick your style.</h2>
+    <p class="sub">Choose at the login screen. Both share the same look and the same shortcuts where possible.</p>
+  </div>
+  <div class="duo">
+    <article class="card spot tilt reveal"><h3>Hyprland</h3><p>Tiling, keyboard-first, transparent rounded windows with zero borders. Fast and minimal.</p><ul><li>Rofi launcher and Waybar</li><li>Hyprlock lock screen</li><li>Workspaces 1–5</li></ul></article>
+    <article class="card spot tilt reveal"><h3>KDE Plasma 6</h3><p>Classic and mouse-friendly on Wayland, with Breeze Dark and Papirus icons.</p><ul><li>Dolphin, Ark, Spectacle</li><li>System Monitor, KCalc</li><li>Branded as ARise Linux</li></ul></article>
+  </div>
+</section>
+
+<section id="themes" class="sec">
+  <h2 class="reveal">Four themes. One command.</h2>
+  <p class="sub reveal">Run <code>arise-theme</code> and Hyprland and Plasma change together. Try it here, this page re-themes too.</p>
+  <div class="themes reveal" id="themeBtns">
+    <button data-t="cyber" class="on"><i style="--c:#b026ff"></i>Cyberpunk Neon</button>
+    <button data-t="tokyo"><i style="--c:#7aa2f7"></i>Tokyo Night</button>
+    <button data-t="nord"><i style="--c:#88c0d0"></i>Nordic Frost</button>
+    <button data-t="gruv"><i style="--c:#fabd2f"></i>Gruvbox Retro</button>
+  </div>
+</section>
+
+<section id="tools" class="sec">
+  <h2 class="reveal">Commands that ship with the system.</h2>
+  <div class="tools">
+    <div class="tool reveal"><code>arise-theme</code><p>Switch between 4 themes across Hyprland and KDE.</p></div>
+    <div class="tool reveal"><code>arise-update</code><p>Update keys, pacman and AUR packages, then clean the cache.</p></div>
+    <div class="tool reveal"><code>arise-setup</code><p>Install gaming, developer or video-editing bundles, or run a health check.</p></div>
+    <div class="tool reveal"><code>sddm-switcher</code><p>Change the login theme and sync wallpaper and colors.</p></div>
+    <div class="tool reveal"><code>change-wallpaper.sh</code><p>Smooth wallpaper change, then pywal repaints the UI.</p></div>
+    <div class="tool reveal"><code>system-help</code><p>Interactive shortcut guide. Press Super + H.</p></div>
+  </div>
+</section>
+
+<section id="keys" class="sec">
+  <h2 class="reveal">Shortcuts. Super is the Windows key.</h2>
+  <div class="keys reveal">
+    <div><kbd>Super</kbd><kbd>Q</kbd><span>Terminal (Kitty)</span></div>
+    <div><kbd>Super</kbd><kbd>R</kbd><span>App launcher (Rofi)</span></div>
+    <div><kbd>Super</kbd><kbd>B</kbd><span>Browser (Brave)</span></div>
+    <div><kbd>Super</kbd><kbd>E</kbd><span>File manager (Yazi)</span></div>
+    <div><kbd>Super</kbd><kbd>V</kbd><span>VS Code</span></div>
+    <div><kbd>Super</kbd><kbd>O</kbd><span>Obsidian</span></div>
+    <div><kbd>Super</kbd><kbd>L</kbd><span>Lock screen</span></div>
+    <div><kbd>Super</kbd><kbd>C</kbd><span>Close window</span></div>
+    <div><kbd>Super</kbd><kbd>H</kbd><span>Shortcut help</span></div>
+    <div><kbd>Shift</kbd><kbd>Super</kbd><kbd>S</kbd><span>Screenshot a region</span></div>
+    <div><kbd>Alt</kbd><kbd>Shift</kbd><span>Switch Arabic / English</span></div>
+    <div><kbd>Super</kbd><kbd>1…5</kbd><span>Go to workspace</span></div>
+  </div>
+</section>
+
+<section class="sec">
+  <h2 class="reveal">What's installed.</h2>
+  <div class="chips reveal">
+    <span>Brave</span><span>VS Code</span><span>Node.js</span><span>NPM</span><span>PNPM</span><span>Bun</span><span>Rust</span><span>Go</span><span>Docker</span><span>Obsidian</span><span>Yazi</span><span>Thunar</span><span>Dolphin</span><span>Loupe</span><span>Celluloid</span><span>MPV</span><span>Amberol</span><span>Hyprshot</span><span>CopyQ</span><span>lazygit</span><span>eza</span><span>bat</span><span>fzf</span><span>zoxide</span><span>ripgrep</span><span>jq</span><span>fastfetch</span><span>Starship</span>
+  </div>
+</section>
+
+<section id="requirements" class="sec">
+  <h2 class="reveal">System Requirements</h2>
+  <p class="sub reveal">Everything you need to run ARise Linux, with extra headroom for demanding workflows.</p>
+  <div class="requirements-grid">
+    <article class="card spot reveal requirement-card">
+      <h3>Minimum Requirements</h3>
+      <ul>
+        <li><strong>Processor:</strong> 64-bit dual-core, 2.0 GHz or faster</li>
+        <li><strong>Memory:</strong> 4 GB RAM</li>
+        <li><strong>Storage:</strong> 25 GB available space</li>
+        <li><strong>Graphics:</strong> OpenGL 3.3+ or Vulkan-capable GPU (Intel HD 4000, AMD, or NVIDIA)</li>
+        <li><strong>Boot:</strong> UEFI mode</li>
+      </ul>
+    </article>
+    <article class="card spot reveal requirement-card recommended">
+      <h3>Recommended for Developers &amp; Power Users</h3>
+      <ul>
+        <li><strong>Processor:</strong> 64-bit quad-core (Intel Core i5 or AMD Ryzen 5)</li>
+        <li><strong>Memory:</strong> 8–16 GB RAM for Docker, Rust, and heavy workflows</li>
+        <li><strong>Storage:</strong> 60 GB+ fast SSD, with room for Timeshift snapshots</li>
+        <li><strong>Graphics:</strong> Modern dedicated or integrated GPU for smooth 60+ FPS Wayland animations</li>
+        <li><strong>Display:</strong> 1080p or higher</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section id="download" class="sec dl">
+  <div class="dl-box reveal">
+    <h2>Download ARise Linux</h2>
+    <p class="sub">Version <span data-v></span> · <span data-size></span> · x86_64 · UEFI</p>
+    <a id="isoBtn" class="btn big magnetic" href="#" download>Download ISO</a>
+    <div class="hash"><span>SHA-256</span><code id="sha"></code><button class="copy" data-copy="#sha">Copy</button></div>
+    <div class="steps">
+      <div><h3>Try it in a VM</h3><p>Create a VirtualBox machine (4 GB RAM, 40 GB disk, EFI on), attach the ISO and boot.</p></div>
+      <div><h3>Verify the file</h3><div class="cmd"><code id="vf">sha256sum ARise-Linux.iso</code><button class="copy" data-copy="#vf">Copy</button></div><p>The output must match the hash above.</p></div>
+    </div>
+    <p class="sub small">ARise Linux is based on Arch Linux and is not affiliated with it.</p>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div><img src="assets/arise-logo.png" alt="" onerror="this.style.display='none'"><b>ARise Linux</b><p>Built by Youssef Abbas (ELJO).</p></div>
+  <div class="links"><a href="https://youssef-abbas-portofolio.vercel.app" target="_blank" rel="noopener">Portfolio</a><a href="https://github.com/YoussefAbbas12" target="_blank" rel="noopener">GitHub</a><a href="#top">Back to top</a></div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
