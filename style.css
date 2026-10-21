@@ -38,7 +38,7 @@ h1 .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08
 .terminal-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin:28px 0 20px}
 .terminal-actions button{display:inline-flex;align-items:center;gap:9px;padding:9px 18px;border:1px solid color-mix(in srgb,var(--a) 28%,var(--ln));border-radius:11px;background:rgba(255,255,255,.055);color:var(--tx);font:600 14px 'JetBrains Mono',monospace;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
 .terminal-actions button:hover,.terminal-actions button:focus-visible{background:color-mix(in srgb,var(--a) 16%,var(--s));border-color:var(--a);transform:translateY(-2px)}
-.term{width:100%;margin-top:14px;text-align:left;border:1px solid color-mix(in srgb,var(--a) 24%,var(--ln));border-radius:var(--r);background:rgba(8,8,14,.94);backdrop-filter:blur(12px);overflow:hidden;box-shadow:0 30px 90px -30px var(--a)}
+.term{width:100%;margin-top:14px;text-align:left;border:1px solid color-mix(in srgb,var(--a) 24%,var(--ln));border-radius:var(--r);background:rgba(8,8,14,.94);backdrop-filter:blur(12px);overflow:hidden}
 .term-bar{position:relative;display:flex;align-items:center;gap:7px;padding:15px 16px;border-bottom:1px solid var(--ln);font-size:13px;color:var(--mu)}
 .term-bar b{width:11px;height:11px;border-radius:50%;background:#28c840}.term-bar b:nth-child(2){background:#febc2e}.term-bar b:nth-child(3){background:#ff5f57}.term-bar b:first-of-type{margin-left:auto}.term-bar span{position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap}
 .term pre{padding:30px;min-height:390px;overflow:auto;white-space:pre-wrap;color:#d6d2f5;font-size:14px;line-height:1.65}
